@@ -1,0 +1,196 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+@import './components';
+@import './animations';
+@import './colors';
+@import './mixins';
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	// font-family: 'Open Sans', sans-serif;
+	background-color: $lightgrey;
+}
+
+.nav {
+	position: fixed;
+	width: 100%;
+	height: 8vh;
+	font-size: 1.8rem;
+	z-index: 1000;
+
+	&__box {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+
+		&-name {
+			position: absolute;
+			display: flex;
+			top: 5%;
+			left: 10%;
+			z-index: 1000;
+
+			&-text-one {
+				h1 {
+					font-size: 8.5rem;
+					background: linear-gradient(
+						120deg,
+						rgba(255, 130, 130, 1) 0%,
+						rgba(228, 87, 87, 1) 35%,
+						rgba(142, 4, 4, 1) 100%
+					);
+					background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
+			}
+
+			&-text-two {
+				h2 {
+					letter-spacing: 0.1em;
+				}
+				.name-one {
+					margin-top: 0.55em;
+				}
+				.name-two {
+					position: relative;
+					margin-top: 0.25em;
+					&::after {
+						content: '';
+						position: absolute;
+						top: -15%;
+						left: 0;
+						width: 120%;
+						border: 0.5px solid $lightred;
+					}
+				}
+			}
+
+			&-text-one,
+			&-text-two {
+				@include links;
+			}
+		}
+	}
+
+	&__box-items {
+		position: absolute;
+		right: 10em;
+		display: flex;
+		z-index: 1000;
+
+		&-item {
+			position: relative;
+			padding: 0.5em 1em;
+			@include links;
+			@include link-animation;
+			transition: color 0.3s;
+			&:hover {
+				color: $lightred;
+			}
+		}
+		&-contact {
+			display: inline-block;
+			position: relative;
+			padding: 0.5em 1em;
+			margin-left: 1.5em;
+			@include links;
+			border: 0 solid $lightred;
+			border-radius: 5%;
+			background-color: $lightred;
+			transition: transform 0.3s, background-color 0.3s;
+
+			&:hover {
+				transform: scale(1.1);
+				background-color: $red;
+			}
+		}
+	}
+}
+
+//header
+.header {
+	position: relative;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	background-image: url('../img/wellness-g875ebf181_1920.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	z-index: 0;
+
+	.hero-shadow {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(21, 15, 15, 0.8);
+		z-index: 0;
+	}
+
+	&__title-box {
+		position: absolute;
+		top: 45%;
+		left: 50%;
+		transform: translate(-50%);
+		font-size: 4.4rem;
+		color: $white;
+		perspective: 30rem;
+
+		.logo-img {
+			position: absolute;
+			width: 100px;
+			left: 50%;
+			top: -70%;
+			transform: translateX(-50%);
+		}
+	}
+
+	&__title-box-text {
+		.job-title {
+			position: relative;
+			margin-top: .25em;
+			font-weight: 200;
+			margin-left: 0.35em;
+			&::after {
+				content: '';
+				position: absolute;
+				left: -15%;
+				width: 130%;
+				border-top: 2px solid $lightred;
+			}
+		}
+	}
+
+	.header__arrow-box {
+		position: absolute;
+		bottom: 1%;
+		left: 50%;
+		padding: 1.6em;
+		transform: translate(-50%, -50%);
+		border: 1px solid $lightred;
+		border-radius: 50%;
+		cursor: pointer;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: 1px solid $lightred;
+			border-radius: 50%;
+			animation: pulse 2s linear 10;
+		}
+	}
+}
