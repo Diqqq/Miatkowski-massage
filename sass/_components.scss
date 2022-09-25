@@ -1,46 +1,29 @@
-// .wrapper {
-// 	margin: 0 auto;
-// 	max-width: 1200px;
-// 	width: 100%;
-// }
+@import './colors';
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1200px;
+	width: 100%;
+}
 
 .section {
 	position: relative;
 	padding: 10em 0;
+	margin-bottom: 5em;
 	text-align: center;
-
-	&__heading {
+	&-heading {
 		position: relative;
 		display: inline-block;
-		font-weight: 300;
-		font-size: 6rem;
-		text-transform: uppercase;
-
-		&::before {
+		font-size: 4rem;
+		color: $lightred;
+		&::after {
 			content: '';
 			position: absolute;
-			left: -10px;
-			bottom: -5px;
-			height: 50%;
-			width: 50%;
-			background-color: rgb(235, 65, 65);
-			z-index: -5;
-		}
-
-		span{
-			color: rgb(235, 65, 65);
-			
-		}
-
-		&-text {
-			font-family: 'Montserrat', sans-serif;
-			max-width: 600px;
-			margin: 0 auto;
-			margin-top: 2em;
-			font-size: 1.4rem;
-			line-height: 1.8em;
+			bottom: -20%;
+			left: -25%;
+			height: 2px;
+			width: 150%;
+			border-bottom: 2px solid $lightred;
 		}
 	}
 }
-
-

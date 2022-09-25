@@ -17,8 +17,7 @@ html {
 }
 
 body {
-	font-family: 'Montserrat', sans-serif;
-	// font-family: 'Open Sans', sans-serif;
+	font-family: 'Albert Sans', sans-serif;
 	background-color: $lightgrey;
 }
 
@@ -134,7 +133,7 @@ body {
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(21, 15, 15, 0.8);
+		background-color: rgba(6, 4, 4, 0.8);
 		z-index: 0;
 	}
 
@@ -159,7 +158,7 @@ body {
 	&__title-box-text {
 		.job-title {
 			position: relative;
-			margin-top: .25em;
+			margin-top: 0.25em;
 			font-weight: 200;
 			margin-left: 0.35em;
 			&::after {
@@ -191,6 +190,45 @@ body {
 			border: 1px solid $lightred;
 			border-radius: 50%;
 			animation: pulse 2s linear 10;
+		}
+	}
+}
+
+// main
+// section about me
+.aboutme {
+	&__box {
+		position: relative;
+		margin-top: 5em;
+		display: flex;
+
+		&-text {
+			position: relative;
+			width: 35%;
+			margin: 3em 0 0 6em;
+			text-align: left;
+			font-size: 3rem;
+			&::after {
+				content: '';
+				position: absolute;
+				left: 5%;
+				bottom: -20%;
+				width: 40%;
+				border-bottom: 2px solid $lightred;
+			}
+		}
+		&-img {
+			position: absolute;
+			right: 5%;
+			display: block;
+			&::after {
+				content: '';
+				position: absolute;
+				top: 35%;
+				left: -15%;
+				height: 30%;
+				border-left: 1px solid $lightred;
+			}
 		}
 	}
 }
