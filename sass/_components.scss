@@ -8,22 +8,27 @@
 
 .section {
 	position: relative;
-	padding: 10em 0;
+	padding: 5em 0 10em 0;
 	margin-bottom: 5em;
 	text-align: center;
 	&-heading {
 		position: relative;
 		display: inline-block;
-		font-size: 4rem;
-		color: $lightred;
+		font-size: 5rem;
+		font-weight: 300;
+		color: $black;
+		z-index: 1000;
 		&::after {
 			content: '';
 			position: absolute;
-			bottom: -20%;
-			left: -25%;
-			height: 2px;
-			width: 150%;
-			border-bottom: 2px solid $lightred;
+			right: -20%;
+			bottom: -10%;
+			height: 50%;
+			width: 80%;
+			border-radius: 30% 70% 67% 33% / 40% 30% 70% 60% ;
+			background-color: $lightred;
+			opacity: 0.5;
+			z-index: -1;
 		}
 	}
 }
