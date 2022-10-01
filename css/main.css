@@ -67,8 +67,8 @@
 }
 @-webkit-keyframes rotate {
   from {
-    -webkit-transform: rotate(15deg);
-            transform: rotate(15deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
@@ -77,8 +77,8 @@
 }
 @keyframes rotate {
   from {
-    -webkit-transform: rotate(15deg);
-            transform: rotate(15deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
@@ -232,7 +232,7 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  z-index: 0;
+  z-index: 1;
 }
 .header .hero-shadow {
   position: absolute;
@@ -347,11 +347,12 @@ body {
 }
 
 .massages {
+  padding: 5em 0 0 0;
   background-image: url("../img/stones.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  height: 100vh;
+  z-index: 1;
 }
 .massages .hero-shadow {
   position: absolute;
@@ -363,4 +364,181 @@ body {
 }
 .massages .section-heading {
   color: #fff;
+}
+.massages .massages-description {
+  position: absolute;
+  margin-top: 5em;
+  font-size: 2.2rem;
+  color: #fff;
+}
+.massages .massages-description::after {
+  content: "";
+  position: absolute;
+  bottom: -200%;
+  left: 32%;
+  height: 1em;
+  width: 30%;
+  border-bottom: 2px solid #eb4141;
+}
+.massages .massages-description::before {
+  content: "";
+  position: absolute;
+  top: -200%;
+  left: 32%;
+  height: 1em;
+  width: 30%;
+  border-top: 2px solid #eb4141;
+}
+.massages__box {
+  position: relative;
+  margin-top: 15em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 10%;
+  width: 100%;
+  height: 45vh;
+}
+.massages__box-card {
+  position: relative;
+  width: 25%;
+}
+.massages__box-card .icon-bg {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 60%;
+  height: 15em;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 35% 65% 48% 52%/30% 36% 64% 70%;
+  background-color: rgb(211, 54, 54);
+  opacity: 0.8;
+  z-index: 0;
+}
+.massages__box-card img {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  z-index: 2;
+}
+.massages__box-card .card-text {
+  position: relative;
+  font-family: "Righteous", cursive;
+  margin-top: 1em;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #fff;
+}
+
+.test-box {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 25em;
+}
+.test-card {
+  position: absolute;
+  width: 20%;
+  height: 30em;
+  margin-bottom: 10em;
+  padding: 1em;
+  background: linear-gradient(144deg, rgb(242, 160, 160) 0%, rgb(221, 123, 123) 34%, rgb(198, 88, 88) 100%);
+  border-radius: 8%;
+  -webkit-box-shadow: 0 0 10px rgb(66, 66, 66);
+          box-shadow: 0 0 10px rgb(66, 66, 66);
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, -webkit-transform 1s;
+  transition: transform 1s, opacity 1s;
+  transition: transform 1s, opacity 1s, -webkit-transform 1s;
+}
+.test-card .test-text {
+  position: relative;
+  font-family: "Righteous", cursive;
+  margin-top: 2em;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #fff;
+}
+.test-card .img-front {
+  margin-top: 6em;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.test .front-card::after {
+  content: "";
+  position: absolute;
+  bottom: -5%;
+  right: -5%;
+  width: 7em;
+  height: 7em;
+  background-color: #fff;
+  border-radius: 45%;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.test .front-card:hover::after {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+.test .test-bg {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  width: 50%;
+  height: 10em;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 35% 65% 48% 52%/30% 36% 64% 70%;
+  background-color: #fff;
+  opacity: 0.7;
+}
+.test .fa-info {
+  position: absolute;
+  bottom: 6%;
+  right: 9%;
+  color: #eb4141;
+  font-size: 1.6rem;
+  z-index: 1;
+}
+.test .img-back {
+  position: absolute;
+  top: 23%;
+  left: 37%;
+}
+.test .test-description {
+  position: absolute;
+  top: 55%;
+  font-size: 1.6rem;
+  margin-right: 0.8em;
+  color: #fff;
+}
+
+.show {
+  opacity: 1;
+  z-index: 1;
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+.hide {
+  opacity: 0;
+  z-index: -1;
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
 }/*# sourceMappingURL=main.css.map */
